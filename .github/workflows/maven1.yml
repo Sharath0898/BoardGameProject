@@ -78,7 +78,7 @@ jobs:
           base64-kube-config: ${{ secrets.KUBE_CONFIG }}
     
     - name: Apply Kubernetes Deployment
-      run: kubectl apply -f deployment-service.yaml -n webapps
+      run: kubectl apply -f deployment-service.yaml -n webapps --validate=false
 
     - name: Get Kubernetes Services
       run: kubectl get svc -n webapps
